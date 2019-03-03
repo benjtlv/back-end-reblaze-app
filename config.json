@@ -1,4 +1,6 @@
 {
-  "apiKey": " AIzaSyBw48pYn-PdTQ6s3raxUjZjefROaNjKIpU ",
-  "databaseURL": "https://careful-emitter-233015.firebaseio.com"
+  "apiKey": "AIzaSyBw48pYn-PdTQ6s3raxUjZjefROaNjKIpU",
+  "databaseURL": "https://careful-emitter-233015.firebaseio.com",
+  "urlPlaces": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=2000&type=restaurant",
+  "url_photos": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400"
 }

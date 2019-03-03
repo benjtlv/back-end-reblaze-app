@@ -7,7 +7,8 @@ const cors = require('cors');
 
 //const indexRouter = require('./routes/index');
 //const usersRouter = require('./routes/users');
-const firebaseAuthRouter = require('./routes/firebaseAuth');
+const firebaseAuth = require('./routes/firebaseAuth');
+const places = require('./routes/places');
 
 const app = express();
 
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-app.use('/auth', firebaseAuthRouter);
+app.use('/auth', firebaseAuth);
+app.use('/places', places);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
