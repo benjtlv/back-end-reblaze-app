@@ -1,9 +1,9 @@
-const firebase = require('firebase');
 const express = require('express');
 const router = express.Router();
 const admin = require('firebase-admin');
-const cred = require('../firebase-credentials.json');
+const firebase = require('firebase');
 const config = require('../config');
+const cred = require('../firebase-credentials');
 
 firebase.initializeApp({
     apiKey: config.apiKey,

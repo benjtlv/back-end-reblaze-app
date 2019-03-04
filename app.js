@@ -4,9 +4,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
+const config = require('./config');
+const admin = require('firebase-admin');
+const cred = require('./firebase-credentials');
 
-//const indexRouter = require('./routes/index');
-//const usersRouter = require('./routes/users');
+admin.initializeApp({
+  apiKey: config.apiKey,
+  credential: admin.credential.cert(cred),
+  databaseURL: config.databaseURL
+});
+
 const firebaseAuth = require('./routes/firebaseAuth');
 const places = require('./routes/places');
 
@@ -23,8 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
-//app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+
 app.use('/auth', firebaseAuth);
 app.use('/places', places);
 
